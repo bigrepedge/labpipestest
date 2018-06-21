@@ -1,7 +1,5 @@
-# Flask-VueJs-Template
+# Flask-VueJs-testbed
 
-[![Build Status](https://travis-ci.org/gtalarico/flask-vuejs-template.svg?branch=master)](https://travis-ci.org/gtalarico/flask-vuejs-template)
-[![codecov](https://codecov.io/gh/gtalarico/flask-vuejs-template/branch/master/graph/badge.svg)](https://codecov.io/gh/gtalarico/flask-vuejs-template)
 
 _Flask + Vue.js Web Application Template_
 

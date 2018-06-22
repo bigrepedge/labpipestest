@@ -47,7 +47,7 @@
   ],
   "gitHooks": {
     "pre-commit": "lint-staged",
-    "post-receive": "turd"
+    "post-receive": "build"
   },
   "lint-staged": {
     "*.js": [

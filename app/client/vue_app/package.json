@@ -47,8 +47,9 @@
   ],
   "gitHooks": {
     "pre-commit": "lint-staged",
-    "post-receive": "scripts.build"
+    "post-receive": "build"
   },
+  "build": "vue-cli-service build",
   "lint-staged": {
     "*.js": [
       "vue-cli-service lint",

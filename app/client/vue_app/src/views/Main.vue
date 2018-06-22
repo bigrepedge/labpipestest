@@ -36,16 +36,13 @@ export default {
     },
     fetchSecureResource () {
       $backend.fetchSecureResource()
-      .then(responseData => {
-        this.resources.push(responseData)
-      }).catch(error => {
-        this.error = error.message
-      })
+        .then(responseData => {
+          this.resources.push(responseData)
+        }).catch(error => {
+          this.error = error.message
+        })
     }
   }
 }
 
 </script>
-
-<style lang="scss">
-</style>

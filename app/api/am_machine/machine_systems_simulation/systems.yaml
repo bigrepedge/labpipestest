@@ -1,0 +1,10 @@
+Extruders:
+  type: ExtruderTemperature
+  options: {n_extruders: 2, n_sensors: 2}
+  inputs: 'stTempSet.arExtruder'
+  outputs: 'stTempAct.arExtruder'
+
+
+Filesystem:
+  type: FileSystem
+  options: {dir: ./mnt}

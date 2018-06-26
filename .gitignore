@@ -1,7 +1,12 @@
 *.pyc
 .cache
+.coverage
+.pytest_cache
+htmlcov/
 
 .DS_Store
+app/client/vue_app/coverage/
+venv/
 node_modules/
 npm-debug.log*
 yarn-debug.log*

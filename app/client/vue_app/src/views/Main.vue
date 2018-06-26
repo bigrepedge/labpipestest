@@ -2,7 +2,7 @@
   <div class="content">
     <div class="panel">
       <p>Click on the links below to fetch data from the Flask server</p>
-      <p>some additions</p>
+      <p>testing random stuff</p>
       <a href="" @click.prevent="fetchResource">Fetch Resource</a><br/>
       <h4>Results</h4>
       <p v-for="r in resources" :key="r.timestamp">

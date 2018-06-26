@@ -20,19 +20,18 @@ $axios.interceptors.response.use(function (response) {
   return response
 }, function (error) {
   // Handle Error
-  console.log(error)
   return Promise.reject(error)
 })
 
 export default {
-
-  fetchResource () {
-    return $axios.get(`resource/xxx`)
+  connectToPrinter () {
+    return $axios.get(`connect/user`)
       .then(response => response.data)
   },
 
-  fetchSecureResource () {
-    return $axios.get(`secure-resource/zzz`)
+  fetchTemperatureResource (heatingElement) {
+    let heatingElementResource = 'temperature/' + heatingElement
+    return $axios.get(heatingElementResource)
       .then(response => response.data)
   }
 }

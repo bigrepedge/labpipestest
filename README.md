@@ -1,22 +1,14 @@
-# Flask-VueJs-testbed
+# BigRep HMI
 
-
-_Flask + Vue.js Web Application Template_
-
-![Vue Logo](/docs/vue-logo.png "Vue Logo") ![Flask Logo](/docs/flask-logo.png "Flask Logo")
-
-[Live Demo](https://flask-vuejs-template.herokuapp.com/#/api)
-
-## Features
-* Minimal Flask App with modular Config
+## Application Stack
+* This is a Minimal Flask App with Vuejs frontend.
 * [Flask-RestPlus](http://flask-restplus.readthedocs.io) API with class-based secure resource routing
-* Starter [PyTest](http://pytest.org) test suite
+* [PyTest](http://pytest.org) test suite
 * [vue-cli 3](https://github.com/vuejs/vue-cli/blob/dev/docs/README.md) with Babel and ESlint.
 * [Vuex](https://vuex.vuejs.org/) for state management
 * [Vue Router](https://router.vuejs.org/)
 * [Axios](https://vuex.vuejs.org/) for backend communication
-* Sample Vue [Filters](https://vuejs.org/v2/guide/filters.html)
-* Heroku Configuration with one-click deployment
+* [Vue Filters](https://vuejs.org/v2/guide/filters.html)
 
 ## Template Structure
 
@@ -48,19 +40,19 @@ The Vue instance is preconfigured with Filters, Vue-Router, Vuex; each of these 
 * Make sure node + npm are installed (tested with npm v5.6)
 * Python 3 is installed (tested with 3.6)
 
+##### Clone this repository
+
+##### Create virtual env
+	```
+	$ cd pro_control_HMI
+	$ virtualenv venv
+	```
+
 ##### Template and Dependencies
-
-* Clone this repository:
-
-	```
-	$ git clone https://github.com/gtalarico/flask-vuejs-template.git
-	```
-
-* Create a [virtual enviroment](https://packaging.python.org/tutorials/managing-dependencies/#managing-dependencies) (highly recommended)
 
 * Install Python dependencies using pip or pipenv from the project directory:
 
-	`$ pipenv install` or `pip install -r requirements.txt`
+	`pip install -r requirements.txt`
 
 * Install npm dependencies
 
@@ -85,18 +77,18 @@ I think it is a small price to pay for the amount of time saved by HMR alone.
 From the root directory run:
 
 ```
-$ python -m app serve_api
+$ python3 -m app serve_api
 ```
 
 This will start the flask development server on `localhost:5000` and will respond to all requests on `/api.`.
-This command is the same as running `python run.py`
+This command is the same as running `python3 run.py`
 
 ##### Client Server
 
 Start another terminal window, and from the same directory run:
 
 ```
-$ python -m app serve_client
+$ python3 -m app serve_client
 ```
 
 This will launch your browser and server the Vue application on `localhost:8080`. T
@@ -105,33 +97,66 @@ he vue app will hit `localhost:5000` to fetch resources.
 This combination allows you have both your backend python files, as well as the Vue app files autoreload on each file save.
 
 
-## Production Server
+##  Build your Vue Application:
 
-The production server uses Gunicorn to serve the entire application.
-This template is configured to work with Heroku out of the box - just make sure you run `npm run build` before pushing it to your Heroku repository.
-
-* Build your Vue Application:
 ```
-$ python -m app build
+$ python3 -m app build
 ```
 This commands is a shorcut for cd-ing into `/app/client/vue_app` and running `$ npm run build`.
 
-* Commit your code
+## Frontend Unit Tests
 
-* Setup your heroku app:
+For unit testing jest is used it has been set up there is a script in the package json if you need to run it on its own.
+```
+$ npm run test:unit
+```
+Jest is loaded as a vue-cli plugin.
 
-	```
-	$ heroku apps:create flask-vuejs-template
-	$ heroku config:set FLASK_CONFIG=Production
-	$ heroku config:set SECRET=SECRETKEY
-	$ heroku git:remote --app flask-vuejs-template
-	```
-* Push your application to heroku:
+* [@vue/cli-plugin-unit-jest](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest)
+* [jest](https://facebook.github.io/jest/)
 
-	```$ git push heroku```
+## Server python tests
 
-### Heroku deployment - One Click Deploy
+pytest has been added with coverage.
 
-You can spin up your on version of this template on Heroku:
+```
+$ pytest
+```
+* [pytest](https://pytest-cov.readthedocs.io/en/latest/)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/gtalarico/flask-vuejs-template)
+## Frontend e2e Tests
+
+These e2e tests only go as far as the browser. The tests are performed using cypress. There is a script in the package json if you need to run it on its own.
+
+```
+$ npm run test:e2e
+```
+If you have this error when running tests in Ubuntu OS __"error while loading shared libraries: libgconf-2.so.4: cannot open shared object file: No such file or directory"__
+
+```
+$ sudo apt-get install -y libgconf-2-4
+```
+
+Cypress is loaded as a vue-cli plugin.
+
+* [@vue/cli-plugin-e2e-cypress](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-cypress)
+* [cypress](https://docs.cypress.io/guides/overview/why-cypress.html#)
+
+
+## Other Useful links
+
+* [vue-cli documentation](https://github.com/vuejs/vue-cli/tree/dev/docs)
+* [Vue.js](https://vuejs.org/)
+
+##### Installed CLI Plugins
+
+* [babel](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel)
+* [eslint](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint)
+
+##### Installed Vue.js Plugins
+
+* [vue-router](https://router.vuejs.org/en/essentials/getting-started.html)
+* [vuex](https://vuex.vuejs.org/en/intro.html)
+* [vue-devtools](https://github.com/vuejs/vue-devtools#vue-devtools)
+* [vue-loader](https://vue-loader.vuejs.org/en)
+* [awesome-vue](https://github.com/vuejs/awesome-vue)

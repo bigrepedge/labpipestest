@@ -3,7 +3,7 @@ from flask import Flask
 import click
 
 
-from app.api import api_rest, api_bp
+from app.api import api_rest, api_bp, opc_ua_machine
 from app.client import client_bp
 
 app = Flask(__name__)

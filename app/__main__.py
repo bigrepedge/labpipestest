@@ -24,7 +24,7 @@ def _bash(cmd, **kwargs):
 def serve_api():
     """ Run Flask Development servers"""
     click.echo('Starting Flask dev server...')
-    cmd = 'python run.py'
+    cmd = 'python3 run.py'
     _bash(cmd)
 
 

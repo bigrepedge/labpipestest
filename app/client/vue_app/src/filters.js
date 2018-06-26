@@ -4,10 +4,24 @@
 import Vue from 'vue'
 
 let filters = {
-
-  formatTimestamp (timestamp) {
-    let datetime = new Date(timestamp)
+  formatTimes (data) {
+    let datetime = new Date(data)
     return datetime.toLocaleTimeString('en-US')
+  },
+  formatTimestamp (data) {
+    let datetime = new Date(data)
+    return datetime.toLocaleTimeString('en-US')
+  },
+  formatTemp (data) {
+    let temperatureStringFormated = data.heating_element.concat(
+      ': ',
+      ' Target ',
+      data.target_temp,
+      ' Actual ',
+      parseInt(data.actual_temp)
+    )
+
+    return temperatureStringFormated
   }
 }
 

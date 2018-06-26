@@ -1,0 +1,19 @@
+{
+  "name": "Test HMI",
+  "description": "",
+  "repository": "",
+  "logo": "",
+  "keywords": ["flask", "vue"],
+  "env": {
+    "FLASK_CONFIG": {
+      "description": "Flask Enviroment Config",
+      "value": "Production"
+    },
+    "SECRET": {
+      "description": "Flask Secret Key",
+      "value": "YourKeyHere"
+    }
+   },
+  "addons": [
+   ]
+}

@@ -46,8 +46,10 @@
     "not ie <= 8"
   ],
   "gitHooks": {
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "post-receive": "build"
   },
+  "build": "vue-cli-service build",
   "lint-staged": {
     "*.js": [
       "vue-cli-service lint",

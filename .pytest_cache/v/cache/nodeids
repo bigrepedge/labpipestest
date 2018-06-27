@@ -1,0 +1,10 @@
+[
+  "tests/test_api.py::test_api", 
+  "tests/test_api.py::test_resource_one", 
+  "tests/test_api.py::test_resource_one_post", 
+  "tests/test_api.py::test_resource_one_patch", 
+  "tests/test_api.py::test_secure_resource_fail", 
+  "tests/test_api.py::test_secure_resource_pass", 
+  "tests/test_api.py::test_session", 
+  "tests/test_client.py::test_api"
+]

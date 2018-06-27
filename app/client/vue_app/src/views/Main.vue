@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="panel">
-      <p>Click on the links below to fetch data from the Flask server (probably still works but we have an error in compiled vendor code)</p>
+      <p>(Not working) Click on the links below to fetch data from the Flask server (probably still works but we have an error in compiled vendor code)</p>
       <p>Random changes to identify branch</p>
       <h4>We had a server call here but it was failing because of a fault in vendor file compilation will look into using another file compiler</h4>
       <p v-for="r in resources" :key="r.timestamp">

@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -15,9 +17,14 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.6",
+    "@vue/cli-plugin-e2e-cypress": "^3.0.0-beta.10",
     "@vue/cli-plugin-eslint": "^3.0.0-beta.6",
+    "@vue/cli-plugin-unit-jest": "^3.0.0-beta.10",
     "@vue/cli-service": "^3.0.0-beta.6",
     "@vue/eslint-config-standard": "^3.0.0-beta.6",
+    "@vue/test-utils": "^1.0.0-beta.10",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^22.0.4",
     "lint-staged": "^6.0.0",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
@@ -33,7 +40,10 @@
     "extends": [
       "plugin:vue/essential",
       "@vue/standard"
-    ]
+    ],
+    "rules": {
+      "@vue/html-indent": "off"
+    }
   },
   "postcss": {
     "plugins": {
@@ -46,17 +56,17 @@
     "not ie <= 8"
   ],
   "gitHooks": {
-    "pre-commit": "lint-staged",
-    "post-receive": "build"
+    "pre-commit": "lint-staged"
   },
-  "build": "vue-cli-service build",
   "lint-staged": {
     "*.js": [
-      "vue-cli-service lint",
+      "vue-cli-service lint --fix",
+      "vue-cli-service test:unit --bail --findRelatedTests --coverage",
       "git add"
     ],
     "*.vue": [
       "vue-cli-service lint",
+      "vue-cli-service test:unit --bail --findRelatedTests",
       "git add"
     ]
   }

@@ -1,9 +1,8 @@
-
 {
-  "name": "Flask VueJs Template",
+  "name": "Test HMI",
   "description": "",
-  "repository": "https://github.com/gtalarico/flask-vuejs-template",
-  "logo": "https://raw.githubusercontent.com/gtalarico/flask-vuejs-template/master/app/client/app/src/assets/img/logo.png",
+  "repository": "",
+  "logo": "",
   "keywords": ["flask", "vue"],
   "env": {
     "FLASK_CONFIG": {

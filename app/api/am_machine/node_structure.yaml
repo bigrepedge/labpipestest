@@ -1,0 +1,74 @@
+JobManCmd:
+  bname: STJobManCmd
+  identifier: STJobManCmd
+  idx: 2
+  type: object
+  children:
+    StartButton:
+      bname: bStart
+      identifier: bStart
+      data_type: Boolean
+      default_value: False
+      type: variable
+    StopButton:
+      bname: bStop
+      identifier: bStop
+      data_type: Boolean
+      default_value: False
+      type: variable
+temp_act:
+  bname: stTempAct
+  identifier: stTempAct
+  children:
+    Bed:
+      bname: arBed
+      identifier: arBed
+      data_type: Float
+      default_value: [20.0, 20.0]
+      type: variable
+    Chamber:
+      bname: arChamber
+      identifier: arChamber
+      data_type: Float
+      default_value: [20.0, 20.0, 20.0, 20.0, 20.0]
+      type: variable
+    Extruder:
+      bname: arExtruder
+      identifier: arExtruder
+      data_type: Float
+      default_value:
+      - [20.0, 20.0]
+      - [20.0, 20.0]
+      type: variable
+  idx: 2
+  type: object
+temp_set:
+  bname: stTempSet
+  identifier: stTempSet
+  children:
+    Bed:
+      bname: rBed
+      identifier: rBed
+      data_type: Float
+      default_value: 60.0
+      type: variable
+    Chamber:
+      bname: rChamber
+      identifier: rChamber
+      data_type: Float
+      default_value: 60.0
+      type: variable
+    Extruder:
+      bname: arExtruder
+      identifier: arExtruder
+      data_type: Float
+      default_value: [200.0, 20.0]
+      type: variable
+  idx: 2
+  type: object
+FileSystem:
+  identifier: 5002
+  bname: Filesystem
+  idx: 26
+  type: object
+  object_type: 13353

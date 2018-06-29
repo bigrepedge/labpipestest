@@ -3,12 +3,33 @@
 import os
 from flask import Flask, Blueprint, session, current_app
 from flask_restplus import Api
+from .util import Machine_Settings
+from .am_machine import Bossy, OPCUAMachine  # , AMServer
+
 
 api_bp = Blueprint('api_bp', __name__,
                    template_folder='templates',
                    url_prefix='/api')
 
 api_rest = Api(api_bp)
+
+opc_ua_machine = OPCUAMachine(Machine_Settings['url'])
+
+"""
+ def opc_ua_machine_start(virtual=False):
+     opc_ua_machine.start(virtual)
+
+    
+    url = Machine_Settings['url']
+
+    if virtual:
+        Vivi = AMServer()
+        Vivi.start()
+        url = Vivi.url
+
+    Bossy.start(url)
+    """
+
 
 @api_bp.after_request
 def add_header(response):
@@ -19,5 +40,6 @@ def add_header(response):
     if not current_app.config['PRODUCTION']:
         response.headers['Access-Control-Allow-Origin'] = '*'
     return response
+
 
 from app.api.rest import resources
